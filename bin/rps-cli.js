@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+/* Play a game of Rock, Paper, Scissors
+ * 	params: shot - optional string
+ * 	output: 
+ * 		object with player param on no input
+ * 		object with player, opponent, and result params on input
+ * 		undefined on out of bounds input (any string other than rock, paper, or scissors) 
+ * 			prints an error before returning undefined*/
 function rps(shot) {
 	const choice_number = Math.floor(Math.random() * 3); 
 	var opponent;
@@ -62,7 +69,9 @@ function rps(shot) {
 			console.error(`${shot} is out of range. Please choose rock, paper, or scissors.`);
 			return;
 	}
+	return {
+		player: shot,
+		opponent: opponent,
+		result: result
+	}
 }
-
-const test = rps("scissors");
-console.log(test)
