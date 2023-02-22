@@ -16,7 +16,53 @@ function rps(shot) {
 	}
 	if (shot === undefined) { return {player: opponent} }
 
+	var result;
+	shot = shot.toLowerCase();
+	switch (shot) {
+		case "rock":
+			switch (opponent) {
+				case "rock":
+					result = "tie";
+					break;
+				case "paper":
+					result = "lose";
+					break;
+				default:
+					result = "win";
+					break;
+			}
+			break;
+		case "paper":
+			switch (opponent) {
+				case "rock":
+					result = "win";
+					break;
+				case "paper":
+					result = "tie";
+					break;
+				default:
+					result = "lose";
+					break;
+			}
+			break;
+		case "scissors":
+			switch (opponent) {
+				case "rock":
+					result = "lose";
+					break;
+				case "paper":
+					result = "win";
+					break;
+				default:
+					result = "tie";
+					break;
+			}
+			break;
+		default:
+			console.error(`${shot} is out of range. Please choose rock, paper, or scissors.`);
+			return;
+	}
 }
 
-const test = rps();
+const test = rps("scissors");
 console.log(test)
