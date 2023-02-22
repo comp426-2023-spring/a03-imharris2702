@@ -1,17 +1,21 @@
 #!/usr/bin/env node
 
 function rps(shot) {
-	if (shot === undefined) {
-		const choice = Math.floor(Math.random() * 3); 
-		switch (choice) {
+	const choice_number = Math.floor(Math.random() * 3); 
+	var opponent;
+	switch (choice_number) {
 			case 0:
-				return {player: "rock"};
+				opponent = "rock";
+				break;
 			case 1:
-				return {player: "paper"};
+				opponent = "paper";
+				break;
 			default:
-				return {player: "scissors"};
-		}
+				opponent = "scissors";
+				break;
 	}
+	if (shot === undefined) { return {player: opponent} }
+
 }
 
 const test = rps();
