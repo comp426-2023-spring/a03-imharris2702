@@ -7,7 +7,7 @@
  * 		object with player, opponent, and result params on input
  * 		undefined on out of bounds input (any string other than rock, paper, or scissors) 
  * 			prints an error before returning undefined*/
-function rps(shot) {
+export function rps(shot) {
 	const choice_number = Math.floor(Math.random() * 3); 
 	var opponent;
 	switch (choice_number) {

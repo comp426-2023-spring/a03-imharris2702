@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 
-function rpsls(shot) {
+/* Play a game of Rock, Paper, Scissors, Lizard, Spock
+ * 	params: shot - optional string
+ * 	output: 
+ * 		object with player param on no input
+ * 		object with player, opponent, and result params on input
+ * 		undefined on out of bounds input (any string other than rock, paper, scissors, lizard, or spock) 
+ * 			prints an error before returning undefined*/
+export function rpsls(shot) {
 	const choice_number = Math.floor(Math.random() * 5); 
 	var opponent;
 	switch (choice_number) {
