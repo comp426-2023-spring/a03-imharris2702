@@ -36,6 +36,12 @@ function rpsls(shot) {
 				case "scissors":
 					result = "win";
 					break;
+				case "lizard":
+					result = "win";
+					break;
+				default:
+					result = "lose";
+					break;
 			}
 			break;
 		case "paper":
@@ -49,6 +55,13 @@ function rpsls(shot) {
 				case "scissors":
 					result = "lose";
 					break;
+				case "lizard":
+					result = "lose";
+					break;
+				default:
+					result = "win";
+					break;
+
 			}
 			break;
 		case "scissors":
@@ -62,6 +75,53 @@ function rpsls(shot) {
 				case "scissors":
 					result = "tie";
 					break;
+				case "lizard":
+					result = "win";
+					break;
+				default:
+					result = "lose";
+					break;
+
+			}
+			break;
+		case "lizard":
+			switch (opponent) {
+				case "rock":
+					result = "lose";
+					break;
+				case "paper":
+					result = "win";
+					break;
+				case "scissors":
+					result = "lose";
+					break;
+				case "lizard":
+					result = "tie";
+					break;
+				default:
+					result = "win";
+					break;
+
+			}
+			break;
+		case "spock":
+			switch (opponent) {
+				case "rock":
+					result = "win";
+					break;
+				case "paper":
+					result = "lose";
+					break;
+				case "scissors":
+					result = "win";
+					break;
+				case "lizard":
+					result = "lose";
+					break;
+				default:
+					result = "tie";
+					break;
+
 			}
 			break;
 		default:
@@ -74,5 +134,3 @@ function rpsls(shot) {
 		result: result
 	}
 }
-
-console.log(rpsls());
