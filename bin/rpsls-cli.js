@@ -20,8 +20,7 @@ Examples:
 	process.exit(0);
 }
 
-if (args.r || args.rules) {
-	console.log(`Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
+const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
 
   - Scissors CUTS Paper
   - Paper COVERS Rock
@@ -32,7 +31,10 @@ if (args.r || args.rules) {
   - Lizard EATS Paper
   - Paper DISPROVES Spock
   - Spock VAPORIZES Rock
-  - Rock CRUSHES Scissors`);
+  - Rock CRUSHES Scissors`
+
+if (args.r || args.rules) {
+	console.log(rules);
 	process.exit(0);
 }
 
@@ -45,6 +47,7 @@ if (args._[0]) {
 
 if (game_result === undefined) {
 	console.error(`${args._[0]} is out of range. Please choose rock, paper, scissors, lizard, or spock.`);
+	console.log(rules);
 } else {
 	console.log(JSON.stringify(game_result));
 }
