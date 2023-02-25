@@ -35,3 +35,16 @@ if (args.r || args.rules) {
   - Rock CRUSHES Scissors`);
 	process.exit(0);
 }
+
+var game_result;
+if (args._[0]) {
+	game_result = rpsls(args._[0]);
+} else {
+	game_result = rpsls();
+}
+
+if (game_result === undefined) {
+	console.error(`${args._[0]} is out of range. Please choose rock, paper, scissors, lizard, or spock.`);
+} else {
+	console.log(JSON.stringify(game_result));
+}
